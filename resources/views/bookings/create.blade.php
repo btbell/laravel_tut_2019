@@ -3,7 +3,10 @@
 @section('content')
 <div class="col">
 <form action="{{ route('bookings.store') }}" method="POST">
+<<<<<<< HEAD
     
+=======
+>>>>>>> tmp
     @include('bookings.fields')
 
     <div class="form-group row">
