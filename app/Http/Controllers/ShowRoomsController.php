@@ -22,12 +22,9 @@ class ShowRoomsController extends Controller
         //$rooms = Room::get();
         //if ($request->query('id') !==null) {
             //$rooms = $rooms->where('room_type_id', $request->query('id'));
-        if (isset($roomType)) {
-            $rooms = Room::where('room_type_id', $roomType)->get();
-        } else {
-            $rooms = Room::get();
-        }
+
         //return response()->json($rooms);
+        $rooms = Room::byType($roomType)->get();
         return view('rooms.index', ['rooms' => $rooms]);
     }
 }
